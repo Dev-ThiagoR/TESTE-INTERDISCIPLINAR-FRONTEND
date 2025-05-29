@@ -1,17 +1,22 @@
-import { useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
-import { useAuth } from '../context/AuthContext';
+import { useState } from "react";
+import { useNavigate, Link } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 
 function Login() {
-  const [email, setEmail] = useState('');
-  const [senha, setSenha] = useState('');
+  const [email, setEmail] = useState("");
+  const [senha, setSenha] = useState("");
   const navigate = useNavigate();
   const { login } = useAuth();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    login(email, senha);
-    navigate('/dashboard');
+
+    const success = login(email, senha);
+    if (success) {
+      navigate("/cursos"); // ou para a página protegida desejada
+    } else {
+      alert("Email ou senha incorretos!");
+    }
   };
 
   return (
@@ -19,10 +24,9 @@ function Login() {
       <h1>Login</h1>
       <form onSubmit={handleSubmit}>
         <div>
-          <label>Email</label>
           <input
             type="email"
-            placeholder="Digite seu email"
+            placeholder="Email"
             required
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -30,10 +34,9 @@ function Login() {
         </div>
 
         <div>
-          <label>Senha</label>
           <input
             type="password"
-            placeholder="Digite sua senha"
+            placeholder="Senha"
             required
             value={senha}
             onChange={(e) => setSenha(e.target.value)}
@@ -42,10 +45,8 @@ function Login() {
 
         <button type="submit">Entrar</button>
       </form>
-
       <p>
-        Não tem conta?{' '}
-        <Link to="/register">Cadastre-se</Link>
+        Não tem uma conta? <Link to="/register">Cadastre-se</Link>
       </p>
     </div>
   );

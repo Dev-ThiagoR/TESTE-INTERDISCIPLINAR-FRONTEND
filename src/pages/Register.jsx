@@ -1,26 +1,25 @@
-import { useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
-import { useAuth } from '../context/AuthContext';
+import { useState } from "react";
+import { useNavigate, Link } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 
 function Register() {
-  const [nome, setNome] = useState('');
-  const [email, setEmail] = useState('');
-  const [senha, setSenha] = useState('');
-  const [confirmarSenha, setConfirmarSenha] = useState('');
+  const [nome, setNome] = useState("");
+  const [email, setEmail] = useState("");
+  const [senha, setSenha] = useState("");
+  const [confirmarSenha, setConfirmarSenha] = useState("");
   const navigate = useNavigate();
-  const { login } = useAuth();
+  const { register } = useAuth();
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     if (senha !== confirmarSenha) {
-      alert('As senhas não coincidem!');
+      alert("As senhas não coincidem!");
       return;
     }
 
-    // Simula o cadastro
-    login(email, senha);
-    navigate('/dashboard');
+    register(nome, email, senha);
+    navigate("/cursos"); // ou para onde desejar após cadastro
   };
 
   return (
@@ -75,8 +74,7 @@ function Register() {
       </form>
 
       <p>
-        Já tem uma conta?{' '}
-        <Link to="/login">Entrar</Link>
+        Já tem uma conta? <Link to="/login">Entrar</Link>
       </p>
     </div>
   );
