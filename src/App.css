@@ -1,0 +1,111 @@
+/* ===================== Navbar ===================== */
+nav.navbar {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(8px);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Logo */
+.nav-left .logo {
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* Centro - Links */
+.nav-center {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-center a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.nav-center a:hover {
+  color: #00ffae;
+}
+
+/* Direita - Dark Mode e Login/Cadastro */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-right a,
+.nav-right button {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s, background-color 0.3s;
+}
+
+.nav-right a:hover,
+.nav-right button:hover {
+  color: #00ffae;
+}
+
+/* Botão Dark Mode */
+.dark-mode-button {
+  border: 2px solid #00ffae;
+  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+  background-color: transparent;
+  color: #00ffae;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.dark-mode-button:hover {
+  background-color: #00ffae;
+  color: #000;
+}
+
+/* Usuário logado */
+.user-info {
+  color: #fff;
+  font-weight: 600;
+}
+
+/* ===================== DARK MODE ===================== */
+body.dark {
+  --bg-color: #121212;
+  --text-color: #fff;
+  --card-bg: #1e1e1e;
+  --nav-bg: rgba(0, 0, 0, 0.8);
+  --footer-bg: rgba(0, 0, 0, 0.8);
+  --link-hover: #00ffae;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+/* ===================== LIGHT MODE ===================== */
+body {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --card-bg: rgba(255, 255, 255, 0.9);
+  --nav-bg: rgba(0, 0, 0, 0.7);
+  --footer-bg: rgba(0, 0, 0, 0.7);
+  --link-hover: #00ffae;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
