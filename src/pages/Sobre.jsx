@@ -1,9 +1,18 @@
 function Sobre() {
   return (
     <div className="card">
-      <h2>Sobre</h2>
+      <h2>Sobre o Projeto</h2>
       <p>
-        Este projeto foi desenvolvido para apoiar a inclusão digital de comunidades indígenas, promovendo conhecimento e acesso à tecnologia.
+        Este projeto tem como missão promover a inclusão digital de comunidades indígenas,
+        oferecendo acesso a conhecimentos tecnológicos, cursos, ferramentas e recursos educativos.
+      </p>
+      <p>
+        Acreditamos que a tecnologia, quando aliada às tradições culturais, fortalece as comunidades,
+        amplia oportunidades e gera transformação social.
+      </p>
+      <p>
+        Nossa equipe é formada por educadores, desenvolvedores e representantes indígenas que, juntos,
+        constroem pontes entre o saber ancestral e o mundo digital.
       </p>
     </div>
   );

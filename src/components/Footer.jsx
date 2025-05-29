@@ -1,7 +1,7 @@
 function Footer() {
   return (
     <footer>
-      <p>© 2024 Inclusão Digital Indígena</p>
+      <p>© 2024 Projeto de Inclusão Digital Indígena. Todos os direitos reservados.</p>
     </footer>
   );
 }
